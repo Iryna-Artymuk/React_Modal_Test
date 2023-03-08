@@ -16,7 +16,7 @@ class App extends Component {
       { id: 'id-2', name: 'Find job', completed: false },
       {
         id: 'id-3',
-        name: 'Go for vacation to Tunisia',
+        name: 'vacation ',
         completed: false,
       },
     ],
