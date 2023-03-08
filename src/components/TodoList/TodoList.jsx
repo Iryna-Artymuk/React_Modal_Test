@@ -44,7 +44,6 @@ class TodoList extends Component {
         {/* <TodoEditor addTodo={addTodo} /> */}
         <ul>
           {todoData.map(item => {
-            console.log(item.name, item.completed);
             return (
               <li key={item.id} className="item">
                 <Todo

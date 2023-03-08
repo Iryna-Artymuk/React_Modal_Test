@@ -5,7 +5,8 @@ const StyledModal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 50vw;
-  height: calc(100vh - 20px);
+  /* height: calc(100vh - 20px); */
+  height: 50vw;
   background-color: #fdfdea;
   /* z-index: 30;  редерим модалку в інший html елемент modal-root в indexHTML. */
   padding: 20px;

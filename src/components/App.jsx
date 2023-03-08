@@ -26,31 +26,44 @@ class App extends Component {
     firterValue: '',
   };
 
-  // componentDidMount() {
-  //   // console.log('App componentDidMount');
+  componentDidMount() {
+    // console.log('App componentDidMount');
 
-  //   const todos = localStorage.getItem('todos');
-  //   const parsedTodos = JSON.parse(todos);
+    const todos = localStorage.getItem('todo');
+    const parsedTodos = JSON.parse(todos);
 
-  //   if (parsedTodos) {
-  //     this.setState({ todos: parsedTodos });
-  //   }
+    if (parsedTodos) {
+      this.setState({ todo: parsedTodos });
+    }
+  }
+
+  // componentDidUpdate(prevProps, prevState) {
+  // console.log('App componentDidUpdate');
+  // const nextTodos = this.state.todo;
+  // const prevTodos = prevState.todo;
+  // if (nextTodos !== prevTodos) {
+  //   console.log('Обновилось поле todos, записываю todos в хранилище');
+  //   localStorage.setItem('todos', JSON.stringify(nextTodos));
+  // }
+  // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
+  //   this.toggleAPPModal();
+  // метод закриття модалки після оновлення стейту порівняти довжину попередньго масиву і нинішнього
+  // }
   // }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log('App componentDidUpdate');
-    // const nextTodos = this.state.todo;
-    // const prevTodos = prevState.todo;
-    // if (nextTodos !== prevTodos) {
-    //   console.log('Обновилось поле todos, записываю todos в хранилище');
-    //   localStorage.setItem('todos', JSON.stringify(nextTodos));
-    // }
-    // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
-    //   this.toggleAPPModal();
-    // метод закриття модалки після оновлення стейту порівняти довжину попередньго масиву і нинішнього
-    // }
-  }
+    // console.log(prevState.todo !== this.state.todo);
+    // prevState.todo !== this.state.todo
+    //   ? localStorage.setItem('todo', JSON.stringify(this.state.todo))
+    //   : localStorage.setItem('todo', JSON.stringify(prevState.todo));
 
+    const nextTodos = this.state.todo;
+    const prevTodos = prevState.todo;
+    if (nextTodos !== prevTodos) {
+      console.log('Обновилось поле todos, записываю todos в хранилище');
+      localStorage.setItem('todo', JSON.stringify(nextTodos));
+    }
+  }
   toggleAPPModal = () => {
     this.setState(prevState => ({
       modalActive: !prevState.modalActive,
