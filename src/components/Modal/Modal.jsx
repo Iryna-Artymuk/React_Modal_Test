@@ -1,10 +1,6 @@
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
-import {
-  StyledModal,
-  StyledBackdrop,
-  StyledModalCloseBtn,
-} from './ModalStyled';
+import { StyledModal, StyledBackdrop } from './ModalStyled';
 import { AiOutlineClose } from 'react-icons/ai';
 import IconButton from '../IconButton/IconButton';
 const modalRoot = document.querySelector('#modal-root');
