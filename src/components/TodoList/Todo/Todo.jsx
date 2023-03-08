@@ -3,7 +3,12 @@ import IconButton from '../../IconButton/IconButton';
 import { ReactComponent as Delete } from '../../../icons/delete.svg';
 const Todo = ({ completed, toggleComplete, name, deleteToDo }) => {
   return (
-    <>
+    <div
+      style={{
+        position: 'relative',
+        width: 200,
+      }}
+    >
       <label>
         <input
           type="checkbox"
@@ -13,11 +18,10 @@ const Todo = ({ completed, toggleComplete, name, deleteToDo }) => {
         />
         <p>{name} </p>
       </label>
-
-      <IconButton onClick={deleteToDo}>
-        <Delete width="2em" height="2em" fill="purple" />
+      <IconButton onClick={deleteToDo} type="todoItem">
+        <Delete width="2em" height="2em" aria-label="delete todo item" />
       </IconButton>
-    </>
+    </div>
   );
 };
 export default Todo;

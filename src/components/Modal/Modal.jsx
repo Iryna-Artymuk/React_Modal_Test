@@ -45,7 +45,11 @@ class Modal extends Component {
             {this.props.children}
           </div>
 
-          <IconButton onClick={this.props.toggleModal}>
+          <IconButton
+            onClick={this.props.toggleModal}
+            aria-label="close"
+            type="modal"
+          >
             <AiOutlineClose />
           </IconButton>
         </StyledModal>

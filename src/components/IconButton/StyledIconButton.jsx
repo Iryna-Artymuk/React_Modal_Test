@@ -1,26 +1,28 @@
 import styled from '@emotion/styled';
 
 const StyledButton = styled.button`
-  /*  
-    position: absolute;
-
-    top: 5px;
-    right: 5px; */
-  /* width: 30px;
-  height: 30px; */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: inherit;
+  position: absolute;
+  top: ${props => {
+    if (props.type === 'modal') {
+      return '10px';
+    }
+    if (props.type === 'todoItem') {
+      return '25%';
+    }
+  }};
+  right: ${props => {
+    if (props.type === 'modal') {
+      return '10px';
+    }
+    if (props.type === 'todoItem') {
+      return '5px';
+    }
+  }};
   background-color: transparent;
-
-  border-radius: 50%;
-
   svg {
     display: inline-block;
-    width: 2em;
-    height: 2em;
+    width: 1em;
+    height: 1em;
     stroke-width: 0;
     stroke: currentColor;
     fill: black;
