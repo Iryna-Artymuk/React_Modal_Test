@@ -7,19 +7,7 @@ import uniqid from 'uniqid';
 import Button from './Button/Button';
 class App extends Component {
   state = {
-    todo: [
-      {
-        id: 'id-1',
-        name: 'Learn React.js',
-        completed: false,
-      },
-      { id: 'id-2', name: 'Find job', completed: false },
-      {
-        id: 'id-3',
-        name: 'vacation ',
-        completed: false,
-      },
-    ],
+    todo: [],
 
     modalActive: false,
 
